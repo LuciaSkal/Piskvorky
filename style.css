@@ -235,7 +235,7 @@ h2 {
 
 
 .button-group button {
-  background: linear-gradient(#615dad, #ffc8da) fixed;
+  background-color: #d39ce4;
   width: calc(100% / 10);
   height: calc(100% / 10);
   border: 1px solid;
@@ -245,10 +245,37 @@ h2 {
 
 button:hover,
 button:focus {
-  background: linear-gradient(#8581b9, #f3d9e2) fixed;
+  background-color: #c583da;
   cursor: pointer;
 }
 
+/*-------------------------------------*/
+.add-circle {
+  background-image: url(img/circle.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  animation-name: come;
+  animation-duration: 0.20s;
+}
+
+.add-cross {
+  background-image: url(img/cross.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 60%;
+  animation-name: come;
+  animation-duration: 0.20s;
+}
+
+@keyframes come {
+  0% {
+    background-size: 0%;
+  }
+  80% {
+    background-size: 50%;
+  }
+}  
 
 
 
