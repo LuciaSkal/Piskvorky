@@ -52,6 +52,14 @@ const symbolsToWin = 5
 const isWinningMove = (field) => {
 	const origin = getPosition(field)
 	const symbol = getSymbol(field)
+	const confirmation = () => {
+		let c = confirm(`Vyhral ${symbol}. Spustit novou hru?`)
+		if (c === true) {
+			location.reload()
+		} else {
+			c === false
+		}
+	}	
 
 	let i
 	
@@ -73,13 +81,9 @@ const isWinningMove = (field) => {
 	}
 
 	if (inRow >= symbolsToWin) {
-		const confirmation = confirm(`Vyhral ${symbol}. Spustit novou hru?`)
-		if (confirmation) {
-			location.reload()
-		} else {
-			return false
-		}
+		return confirmation()
 	}
+	
 
 	/*--------------column----------*/
 	let inColumn = 1
@@ -99,12 +103,7 @@ const isWinningMove = (field) => {
 	}
 
 	if (inColumn >= symbolsToWin) {
-		const confirmation = confirm(`Vyhral ${symbol}. Spustit novou hru?`)
-		if (confirmation) {
-			location.reload()
-		} else {
-			return false
-		}
+		return confirmation()
 	}
 
 
@@ -134,12 +133,7 @@ const isWinningMove = (field) => {
 	}
 
 	if (leftToBottomRight >= symbolsToWin) {
-		const confirmation = confirm(`Vyhral ${symbol}. Spustit novou hru?`)
-		if (confirmation) {
-			location.reload()
-		} else {
-			return false
-		}
+		return confirmation()
 	}
 
 
@@ -166,12 +160,7 @@ const isWinningMove = (field) => {
 	}
 
 	if (rightToBottomLeft >= symbolsToWin) {
-		const confirmation = confirm(`Vyhral ${symbol}. Spustit novou hru?`)
-		if (confirmation) {
-			location.reload()
-		} else {
-			return false
-		}
+		return confirmation()
 	}
 
 	return false
