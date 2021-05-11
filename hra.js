@@ -53,12 +53,14 @@ const isWinningMove = (field) => {
 	const origin = getPosition(field)
 	const symbol = getSymbol(field)
 	const confirmation = () => {
+		setTimeout(() => {
 		let c = confirm(`Vyhral ${symbol}. Spustit novou hru?`)
 		if (c === true) {
 			location.reload()
 		} else {
 			c === false
 		}
+	 }, 200)
 	}	
 
 	let i
